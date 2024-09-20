@@ -17,11 +17,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace ThoNohT.NohBoard.Extra
 {
+    using Microsoft.VisualBasic.ApplicationServices;
+
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using System.Runtime.Serialization.Json;
     using System.Text;
     using System.Text.RegularExpressions;
+    using System.Windows.Forms;
     using System.Xml;
 
     /// <summary>
@@ -123,11 +127,11 @@ namespace ThoNohT.NohBoard.Extra
         /// <param name="parts">The parts that make up the path from the keyboards folder.</param>
         /// <returns>The specified <see cref="DirectoryInfo"/>.</returns>
         public static DirectoryInfo FromKbs(params string[] parts)
-        {
-            var array = new List<string> { Constants.ExePath, Constants.KeyboardsFolder };
-            array.AddRange(parts);
-            return new DirectoryInfo(Path.Combine(array.ToArray()));
-        }
+        => new DirectoryInfo(Path.Combine(
+                [ Constants.ExePath + (Debugger.IsAttached ? "\\..\\..\\..\\..\\..\\..\\" : ""), 
+                  Constants.KeyboardsFolder, .. parts ]
+               )
+            );
 
         /// <summary>
         /// Checks whether an image exists for the currently loaded style.

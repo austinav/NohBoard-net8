@@ -1,10 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <RootNamespace>ThoNohT.NohBoard.Hooking</RootNamespace>
     <AssemblyName>NohBoard.Hooking</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- BLOCK OF ASSEMBLY INFO TO GENERATE, BUT CURRENTLY CONFLICTS WITH gotri.exe assembly info generator with auto-versioning-->
+    <!--<AssemblyTitle>NohBoard.Hooking</AssemblyTitle>
+    <AssemblyDescription>A keyboard and mouse hooking library for NohBoard</AssemblyDescription>
+    <AssemblyCompany>ThoNohT</AssemblyCompany>
+    <AssemblyProduct>NohBoard Hooking Library</AssemblyProduct>
+    <AssemblyCopyright>Copyright ©  2016</AssemblyCopyright>-->    
   </PropertyGroup>
 
   <Target Name="GenerateVersionedFiles" BeforeTargets="PreBuildEvent">

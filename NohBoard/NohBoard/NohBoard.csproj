@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>ThoNohT.NohBoard</RootNamespace>
     <StartupObject>ThoNohT.NohBoard.Program</StartupObject>
@@ -10,6 +10,12 @@
     <PublishReadyToRun>true</PublishReadyToRun>
     <PublishSingleFile>true</PublishSingleFile>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- BLOCK OF ASSEMBLY INFO TO GENERATE, BUT CURRENTLY CONFLICTS WITH gotri.exe assembly info generator with auto-versioning-->
+    <!--<AssemblyTitle>NohBoard</AssemblyTitle>
+    <AssemblyDescription>A Keyboard Visualizer</AssemblyDescription>
+    <AssemblyCompany>ThoNohT</AssemblyCompany>
+    <AssemblyProduct>NohBoard Application</AssemblyProduct>
+    <AssemblyCopyright>Copyright ©  2016</AssemblyCopyright>-->
   </PropertyGroup>
 
   <Target Name="GenerateVersionedFiles" BeforeTargets="BeforeBuild">
